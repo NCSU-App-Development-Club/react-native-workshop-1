@@ -1,8 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { StyleSheet, Text, View, Button, Platform } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import { useState } from 'react';
+import { Text } from '@/components/ui/text';
+import { Heading } from '@/components/ui/heading';
+import { Button, ButtonText, ButtonGroup } from '@/components/ui/button';
+import Constants from 'expo-constants';
+import { Dimensions } from 'react-native';
 
 export default function App() {
 
@@ -11,10 +16,17 @@ export default function App() {
   return (
     <GluestackUIProvider mode="light">
       <View style={styles.container}>
-        <Text>Count: {count}{Platform.OS == "android" && ' '}</Text>
-        <Button title="Increase Count" onPress={() => setCount(count + 1)}/>
-        <Button title="Decrease Count" onPress={() => setCount(count - 1)}/>
         <StatusBar style="auto" />
+        <Heading>Simple Counter</Heading>
+        <Text>Count: {count}{Platform.OS == "android" && ' '}</Text>
+        <ButtonGroup>
+          <Button size="md" variant="solid" action="primary" onPress={() => setCount(count + 1)}>
+            <ButtonText>Increase</ButtonText>
+          </Button>
+          <Button size="md" variant="solid" action="primary" onPress={() => setCount(count - 1)}>
+            <ButtonText>Decrease</ButtonText>
+          </Button>
+        </ButtonGroup>
       </View>
     </GluestackUIProvider>
   );
