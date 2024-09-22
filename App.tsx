@@ -6,8 +6,6 @@ import { useState } from 'react';
 import { Text } from '@/components/ui/text';
 import { Heading } from '@/components/ui/heading';
 import { Button, ButtonText, ButtonGroup } from '@/components/ui/button';
-import Constants from 'expo-constants';
-import { Dimensions } from 'react-native';
 
 export default function App() {
 
