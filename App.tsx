@@ -40,7 +40,7 @@ export default function App() {
       <View style={styles.container}>
         <StatusBar style="auto" />
         <Heading size="3xl">Simple Counter</Heading>
-        <Text style={styles.number}>{" "}{count}{" "}</Text>
+        <Text size="5xl" style={styles.number}>{" "}{count}{" "}</Text>
         <ButtonGroup>
           <Button size="md" variant="solid" action="primary" onPress={decrement}>
             <ButtonText>Decrement</ButtonText>
@@ -77,9 +77,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width
   },
   number: {
-    fontSize: 42,
-    lineHeight: 48,
-    marginBottom: 16
+    margin: 12
   },
   alert: {
     position: "absolute",
